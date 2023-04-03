@@ -1,1 +1,58 @@
 @use "../../styles/partials/variables" as *;
+
+.login-page {
+  padding: 3rem;
+  &__logo {
+    display: block;
+    margin: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    margin-top: 2rem;
+  }
+
+  &__form-label {
+    padding-left: 0.1rem;
+    color: $primary-color-dark;
+  }
+
+  &__form-input {
+    display: block;
+    margin-bottom: 0.5rem;
+    background-color: $primary-color-light;
+    width: 100%;
+    min-width: 16rem;
+    margin-bottom: 1rem;
+    border-radius: 13px;
+    border: 1px solid $primary-color-base;
+    padding: 0.75rem;
+    font-family: "DM Sans";
+    color: black;
+    resize: none;
+
+    &:focus {
+      border-color: $primary-color-base;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    all: unset;
+    width: 5rem;
+    padding: 0.8rem 1rem;
+    border-radius: 13px;
+    background-color: $primary-color-medium;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-color-base;
+      color: #fff;
+    }
+  }
+}

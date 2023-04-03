@@ -1,6 +1,14 @@
+@use "./styles/partials/variables" as *;
+
 * {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
   font-family: "DM Sans";
+  color: $primary-color-dark;
+}
+
+.app {
+  max-width: 30rem;
+  margin: 0 auto;
 }
