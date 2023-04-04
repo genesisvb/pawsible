@@ -9,6 +9,7 @@ import arrowRight from "../../assets/images/icons/arrow-right.svg";
 import borderCollie from "../../assets/images/border-collie.svg";
 import notifications from "../../assets/images/icons/notifications.svg";
 import cat2 from "../../assets/images/cat-2.svg";
+import Footer from "../../components/Footer/Footer";
 
 function HomePage() {
   return (
@@ -73,21 +74,40 @@ function HomePage() {
             />
           </div>
         </div>
-        <div className="tasks__image-wrapper">
-          <div>
-            <img className="tasks__image" src={borderCollie} alt="dog" />
-            <img
-              className="tasks__notification"
-              src={notifications}
-              alt="notifications"
-            />
-          </div>
+        <div className="tasks__big-container">
+          <div className="tasks__image-container">
+            <div className="tasks__image-wrapper">
+              <img className="tasks__image" src={borderCollie} alt="dog" />
+              <img
+                className="tasks__notification"
+                src={notifications}
+                alt="notifications"
+              />
+            </div>
+            <div className="tasks__image-wrapper">
+              <img className="tasks__image" src={borderCollie} alt="dog" />
+              <img
+                className="tasks__notification"
+                src={notifications}
+                alt="notifications"
+              />
+            </div>
+            <div className="tasks__image-wrapper">
+              <img className="tasks__image" src={borderCollie} alt="dog" />
+              <img
+                className="tasks__notification"
+                src={notifications}
+                alt="notifications"
+              />
+            </div>
 
-          <div>
-            <img className="tasks__image--right" src={cat2} alt="cat" />
+            {/* <div>
+              <img className="tasks__image--right" src={cat2} alt="cat" />
+            </div> */}
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

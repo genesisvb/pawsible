@@ -30,6 +30,8 @@
     justify-content: center;
     margin-bottom: 1rem;
     width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
   }
 
   &__title {
@@ -40,8 +42,7 @@
 
   &__categories {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   &__icons {
@@ -52,7 +53,7 @@
 
   &__icon {
     background-color: $primary-color-light;
-    padding: 1.5rem;
+    padding: 1.3rem;
     width: 80px;
     height: 80px;
     border-radius: 8px;
@@ -85,25 +86,34 @@
     width: 0.73rem;
   }
 
-  &__image-wrapper {
+  &__big-container {
     display: flex;
-    gap: 2.5rem;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  &__image-container {
+    display: flex;
+    width: 125rem;
+    gap: 2rem;
+  }
+
+  &__image-wrapper {
     position: relative;
+    width: 15.625rem;
+    flex-shrink: 0;
   }
 
   &__image {
-    width: 100%;
-    position: relative;
+    margin-bottom: 1rem;
 
     &--right {
-      width: 100%;
       border-radius: 8px;
     }
   }
 
   &__notification {
     position: absolute;
-    bottom: 7rem;
-    right: 8rem;
+    top: -0.5rem;
+    right: 0;
   }
 }

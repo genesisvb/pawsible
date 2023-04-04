@@ -2,6 +2,8 @@ import "./LoginPage.scss";
 import logoPaw from "../../assets/images/logos/logo-paw.svg";
 import logo from "../../assets/images/logos/pawsible.svg";
 import { useNavigate } from "react-router-dom";
+import { CiLock } from "react-icons/ci";
+import { CgProfile } from "react-icons/cg";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -17,16 +19,24 @@ function LoginPage() {
 
       <form className="login-page__form" onSubmit={onSubmit}>
         <label className="login-page__form-label" htmlFor="username">
+          <CgProfile />
           Username
         </label>
-        <input className="login-page__form-input" name="user" type="text" />
+        <input
+          className="login-page__form-input"
+          name="user"
+          type="text"
+          placeholder="Enter your username"
+        />
         <label className="login-page__form-label" htmlFor="password">
+          <CiLock />
           Password
         </label>
         <input
           className="login-page__form-input"
           name="password"
           type="password"
+          placeholder="Enter your password"
         />
         <div className="login-page__button-wrapper">
           <button type="submit" className="login-page__button">

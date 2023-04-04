@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  background-color: #f8f8f8;
+
+  &__icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+  }
+
+  &__icon {
+    cursor: pointer;
+    fill: #737070;
+    transition: 0.4s fill;
+
+    &:hover {
+      fill: $primary-color-base;
+    }
+  }
+}
