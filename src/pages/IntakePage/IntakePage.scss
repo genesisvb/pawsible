@@ -1,0 +1,25 @@
+@use "../../styles/partials/variables" as *;
+
+.intake-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__link-icon {
+    height: 1rem;
+  }
+
+  &__text {
+    color: $primary-color-base;
+    font-weight: 400;
+    font-size: 1.0625rem;
+  }
+}

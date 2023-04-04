@@ -10,6 +10,7 @@ import borderCollie from "../../assets/images/border-collie.svg";
 import notifications from "../../assets/images/icons/notifications.svg";
 import cat2 from "../../assets/images/cat-2.svg";
 import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -31,11 +32,13 @@ function HomePage() {
           <h1 className="section__title">Select the category</h1>
           <div className="section__categories">
             <div className="section__icons">
-              <img
-                className="section__icon"
-                src={intakeIcon}
-                alt="intake icon"
-              />
+              <Link to="/intake">
+                <img
+                  className="section__icon"
+                  src={intakeIcon}
+                  alt="intake icon"
+                />
+              </Link>
               <p className="section__icon-description">Intake</p>
             </div>
 
