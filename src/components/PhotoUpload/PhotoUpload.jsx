@@ -1,16 +1,17 @@
 import "./PhotoUpload.scss";
-import dogPic from "../../assets/images/dog-pic.svg";
+import Form from "../Form/Form.jsx";
 
 function PhotoUpload() {
   return (
-    <div className="photo-upload">
-      <p className="photo-upload__text">
-        Step 1: Tap below to upload a picture
-      </p>
-      <div className="photo-upload__img-container">
-        <img className="photo-upload__img" src={dogPic} alt="dog" />
+    <>
+      <div className="photo-upload">
+        <p className="photo-upload__text">
+          Step 1: Tap below to upload a picture
+        </p>
+        <div className="photo-upload__img-container"></div>
       </div>
-    </div>
+      <Form />
+    </>
   );
 }
 

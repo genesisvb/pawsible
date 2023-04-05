@@ -8,7 +8,13 @@
     margin-bottom: 1rem;
   }
 
-  &__img {
+  &__img-container {
     width: 100%;
+    height: 25vh;
+    margin-bottom: 1rem;
+    background-image: url("../../assets/images/dog-pic.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
