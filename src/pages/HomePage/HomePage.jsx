@@ -103,10 +103,6 @@ function HomePage() {
                 alt="notifications"
               />
             </div>
-
-            {/* <div>
-              <img className="tasks__image--right" src={cat2} alt="cat" />
-            </div> */}
           </div>
         </div>
       </section>
