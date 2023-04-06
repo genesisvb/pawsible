@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  padding: 2rem 1rem 1rem;
+  padding: 0 0 1rem;
   display: flex;
   justify-content: space-between;
 
@@ -23,8 +23,6 @@
 }
 
 .section {
-  padding: 0 1rem;
-
   &__image {
     display: flex;
     justify-content: center;
