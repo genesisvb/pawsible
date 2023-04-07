@@ -1,9 +1,10 @@
 import "./Form.scss";
+import { Link } from "react-router-dom";
 
 function Form() {
   return (
     <section>
-      <form className="form">
+      <div className="form">
         <h2 className="form__heading">Step 2: Add profile information</h2>
         <p className="form__subheading">Species:</p>
         <div className="form__wrapper">
@@ -239,9 +240,11 @@ function Form() {
           </div>
         </div>
         <div className="form__button-wrapper">
-          <button className="form__button">Next</button>
+          <Link to="/area" className="form__button">
+            Next
+          </Link>
         </div>
-      </form>
+      </div>
     </section>
   );
 }

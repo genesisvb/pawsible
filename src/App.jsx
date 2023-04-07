@@ -3,6 +3,7 @@ import "./App.scss";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import HomePage from "./pages/HomePage/HomePage";
 import IntakePage from "./pages/IntakePage/IntakePage";
+import ShelterArea from "./components/ShelterArea/ShelterArea";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/intake" element={<IntakePage />} />
+          <Route path="/area" element={<ShelterArea />} />
         </Routes>
       </BrowserRouter>
     </div>
