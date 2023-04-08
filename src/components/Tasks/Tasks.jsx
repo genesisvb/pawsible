@@ -6,7 +6,7 @@ function Tasks() {
   return (
     <div>
       <Header />
-      <h2 className="tasks__title">Add daily tasks</h2>
+      <h2 className="tasks__title-2">Add daily tasks</h2>
       <ul className="tasks__list">
         <li className="tasks__list-item">
           <label className="tasks__label" htmlFor="grooming">

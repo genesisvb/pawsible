@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import IntakePage from "./pages/IntakePage/IntakePage";
 import ShelterArea from "./components/ShelterArea/ShelterArea";
 import Tasks from "./components/Tasks/Tasks";
+import Review from "./components/Review/Review";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/intake" element={<IntakePage />} />
           <Route path="/area" element={<ShelterArea />} />
           <Route path="/tasks" element={<Tasks />} />
+          <Route path="/review" element={<Review />} />
         </Routes>
       </BrowserRouter>
     </div>
