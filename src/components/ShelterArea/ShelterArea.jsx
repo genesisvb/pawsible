@@ -78,7 +78,7 @@ function ShelterArea() {
         </div>
       </div>
       <div className="form__button-wrapper">
-        <Link to="/area" className="form__button">
+        <Link to="/tasks" className="form__button">
           Next
         </Link>
       </div>

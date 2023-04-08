@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables" as *;
+
+.tasks {
+  &__title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    padding: 3rem 0 0;
+  }
+
+  &__list {
+    padding: 1rem;
+  }
+  &__list-item {
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  &__input {
+    margin-right: 0.5rem;
+    // appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+
+    &:checked {
+      color: #fff;
+      background-color: $primary-color-base;
+    }
+    &--custom {
+      border: none;
+      font-style: italic;
+    }
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  &__textarea {
+    width: 100%;
+    border-radius: 8px;
+    height: 8.875rem;
+    border: 2px solid #a7a7a7;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+
+    &:focus {
+      border-color: $primary-color-base;
+    }
+  }
+}
