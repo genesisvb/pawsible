@@ -13,7 +13,7 @@ function Form() {
               className="form__radio-input"
               type="radio"
               id="petType1"
-              name="cat"
+              name="species"
               value="Cat"
             />
             <label className="form__label" for="petType1">
@@ -26,7 +26,7 @@ function Form() {
               className="form__radio-input"
               type="radio"
               id="petType2"
-              name="dog"
+              name="species"
               value="Dog"
             />
             <label className="form__label" for="petType2">
@@ -39,7 +39,7 @@ function Form() {
               className="form__radio-input"
               type="radio"
               id="petType3"
-              name="other"
+              name="species"
               value="Other"
             />
             <label className="form__label" for="petType3">
@@ -74,7 +74,7 @@ function Form() {
               className="form__radio-input"
               type="radio"
               id="genderType1"
-              name="female"
+              name="gender"
               value="Female"
             />
             <label className="form__label" for="genderType2">
@@ -87,7 +87,7 @@ function Form() {
               className="form__radio-input"
               type="radio"
               id="genderType2"
-              name="male"
+              name="gender"
               value="Male"
             />
             <label className="form__label" for="genderType2">
@@ -100,7 +100,7 @@ function Form() {
               className="form__radio-input"
               type="radio"
               id="genderType3"
-              name="unknown"
+              name="gender"
               value="Unknown"
             />
             <label className="form__label" for="genderType3">
@@ -191,7 +191,7 @@ function Form() {
                 className="form__radio-input"
                 type="radio"
                 id="petAge1"
-                name="0-1"
+                name="age"
                 value="0-1"
               />
               <label className="form__label" for="petAge1">
@@ -204,7 +204,7 @@ function Form() {
                 className="form__radio-input"
                 type="radio"
                 id="petAge2"
-                name="2-5"
+                name="age"
                 value="2-5"
               />
               <label className="form__label" for="petAge2">
@@ -217,7 +217,7 @@ function Form() {
                 className="form__radio-input"
                 type="radio"
                 id="petAge3"
-                name="6-9"
+                name="age"
                 value="6-9"
               />
               <label className="form__label" for="petAge3">
@@ -230,7 +230,7 @@ function Form() {
                 className="form__radio-input"
                 type="radio"
                 id="petAge4"
-                name="+10"
+                name="age"
                 value="+10"
               />
               <label className="form__label" for="petAge4">
