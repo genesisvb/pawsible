@@ -5,21 +5,28 @@
   justify-content: space-between;
   padding: 1rem 0;
 
-  &__link {
+  &__button {
+    all: unset;
     display: flex;
     text-decoration: none;
     justify-content: space-between;
     gap: 0.5rem;
     align-items: center;
+    cursor: pointer;
   }
 
-  &__link-icon {
+  &__button-icon {
     height: 1rem;
   }
 
   &__text {
     color: $primary-color-base;
     font-weight: 400;
+    font-size: 1.0625rem;
+  }
+
+  &__title {
+    font-weight: 500;
     font-size: 1.0625rem;
   }
 }

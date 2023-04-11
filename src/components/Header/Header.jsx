@@ -1,31 +1,33 @@
 import "./Header.scss";
 import arrowLeft from "../../assets/images/icons/chevron-left.svg";
 import closeIcon from "../../assets/images/icons/close-icon.svg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ heading, prevText, onPrev }) {
+  const navigate = useNavigate();
+
   return (
     <div className="intake-header">
-      <Link className="intake-header__link" to="/">
+      <button className="intake-header__button" onClick={onPrev} type="button">
         <img
-          className="intake-header__link-icon"
+          className="intake-header__button-icon"
           src={arrowLeft}
           alt="arrow back"
         />
-        <p className="intake-header__text">Home</p>
-      </Link>
+        <p className="intake-header__text">{prevText}</p>
+      </button>
 
       <div className="intake-header__title-wrapper">
-        <p className="intake-header__title">Basic Information</p>
+        <p className="intake-header__title">{heading}</p>
       </div>
 
-      <div className="intake-header__button-wrapper">
+      <button className="intake-header__button" onClick={() => navigate("/")}>
         <img
-          className="intake-header__button"
+          className="intake-header__button-icon"
           src={closeIcon}
           alt="close icon"
         />
-      </div>
+      </button>
     </div>
   );
 }
