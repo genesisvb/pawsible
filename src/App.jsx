@@ -6,6 +6,7 @@ import IntakePage from "./pages/IntakePage/IntakePage";
 import ShelterArea from "./components/ShelterArea/ShelterArea";
 import Tasks from "./components/Tasks/Tasks";
 import Review from "./components/Review/Review";
+import NewPetPage from "./pages/NewPetPage/NewPetPage";
 
 function App() {
   return (
@@ -14,10 +15,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/intake" element={<IntakePage />} />
-          <Route path="/area" element={<ShelterArea />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/review" element={<Review />} />
+          <Route path="/pets/new" element={<NewPetPage />} />
         </Routes>
       </BrowserRouter>
     </div>
