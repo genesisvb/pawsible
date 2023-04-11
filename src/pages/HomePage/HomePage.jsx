@@ -8,7 +8,6 @@ import contactsIcon from "../../assets/images/icons/Vector-2.svg";
 import arrowRight from "../../assets/images/icons/arrow-right.svg";
 import borderCollie from "../../assets/images/border-collie.svg";
 import notifications from "../../assets/images/icons/notifications.svg";
-import cat2 from "../../assets/images/cat-2.svg";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
@@ -17,7 +16,7 @@ function HomePage() {
     <>
       <header className="header">
         <div className="header__wrapper">
-          <date className="header__date">2nd April 2023</date>
+          <p className="header__date">13th April 2023</p>
           <p className="header__greeting">Hi Genesis!</p>
         </div>
         <div className="header__avatar-wrapper">
@@ -32,7 +31,7 @@ function HomePage() {
           <h1 className="section__title">Select the category</h1>
           <div className="section__categories">
             <div className="section__icons">
-              <Link to="/intake">
+              <Link to="/pets/new">
                 <img
                   className="section__icon"
                   src={intakeIcon}
