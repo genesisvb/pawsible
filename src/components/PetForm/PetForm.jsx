@@ -6,22 +6,10 @@ import Review from "../Review/Review";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function PetForm() {
+function PetForm({ initFormValues, onComplete }) {
   const navigate = useNavigate();
   const [screen, setScreen] = useState(1);
-  const [formValues, setFormValues] = useState({
-    photo: { url: "", file: null },
-    species: null,
-    name: "",
-    breed: "",
-    gender: null,
-    character: [],
-    age: null,
-    area: null,
-    tasks: [],
-    notes: "",
-    image: {},
-  });
+  const [formValues, setFormValues] = useState(initFormValues);
 
   function saveNewFormValues(newValues) {
     setFormValues({ ...formValues, ...newValues });
@@ -67,7 +55,7 @@ function PetForm() {
           formValues={formValues}
           prevText="Tasks"
           onPrev={() => setScreen(3)}
-          onNext={() => alert("save!")}
+          onNext={() => onComplete(formValues)}
           onEditBasicInfo={() => setScreen(1)}
           onEditArea={() => setScreen(2)}
           onEditTasks={() => setScreen(3)}
