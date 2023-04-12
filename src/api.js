@@ -21,3 +21,11 @@ export function createPet(data) {
 export function getPets() {
   return axios.get(`${apiUrl}/pets`);
 }
+
+export function getPet(id) {
+  return axios.get(`${apiUrl}/pets/${id}`);
+}
+
+export function updatePet(data) {
+  return axios.put(`${apiUrl}/pets/${data.id}`, data);
+}

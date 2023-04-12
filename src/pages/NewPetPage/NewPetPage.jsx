@@ -17,7 +17,6 @@ function NewPetPage() {
     area: null,
     tasks: [],
     notes: "",
-    image: {},
   };
 
   async function onComplete(formValues) {
@@ -32,7 +31,7 @@ function NewPetPage() {
         gender: formValues.gender,
         character: formValues.character,
         age: formValues.age,
-        area: formValues.are,
+        area: formValues.area,
         tasks: formValues.tasks,
         notes: formValues.notes,
       });
@@ -46,7 +45,11 @@ function NewPetPage() {
 
   return (
     <>
-      <PetForm initFormValues={initFormValues} onComplete={onComplete} />
+      <PetForm
+        initFormValues={initFormValues}
+        onComplete={onComplete}
+        newProfile={true}
+      />
     </>
   );
 }

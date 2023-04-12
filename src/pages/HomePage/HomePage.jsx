@@ -1,6 +1,5 @@
 import "./HomePage.scss";
 import avatar from "../../assets/images/avatar.jpeg";
-import catPhoto from "../../assets/images/cat.jpeg";
 import intakeIcon from "../../assets/images/icons/Vector.svg";
 import inventoryIcon from "../../assets/images/icons/intake.svg";
 import tasksIcon from "../../assets/images/icons/Vector-3.svg";
@@ -41,7 +40,7 @@ function HomePage() {
         <div className="section__image-wrapper">
           <img
             className="section__image"
-            src={pets[Math.floor(Math.random() * pets.length)].photo}
+            src={pets[Math.floor(Math.random() * pets.length)].photoUrl}
             alt="pet"
           />
         </div>
@@ -98,7 +97,7 @@ function HomePage() {
           <div className="tasks__image-container">
             {pets.slice(0, 5).map((pet) => (
               <div key={pet.id} className="tasks__image-wrapper">
-                <img className="tasks__image" src={pet.photo} alt="pet" />
+                <img className="tasks__image" src={pet.photoUrl} alt="pet" />
                 <div className="tasks__notification">{pet.tasks.length}</div>
               </div>
             ))}

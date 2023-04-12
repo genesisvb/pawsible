@@ -8,6 +8,8 @@ import kennelIcon from "../../assets/images/icons/kennel.svg";
 function Review({
   formValues,
   prevText,
+  headingText,
+  buttonText,
   onPrev,
   onNext,
   onEditBasicInfo,
@@ -17,7 +19,7 @@ function Review({
 }) {
   return (
     <>
-      <Header heading="New Pet Review" prevText={prevText} onPrev={onPrev} />
+      <Header heading={headingText} prevText={prevText} onPrev={onPrev} />
       <div className="review">
         <div>
           <img className="review__img" src={formValues.photo.url} alt="pet" />
@@ -66,13 +68,6 @@ function Review({
               {task}
             </li>
           ))}
-
-          {/* <li className="review__list-item">
-            <label className="review__label" htmlFor="grooming">
-              <input className="review__input" type="checkbox" />
-              Grooming
-            </label>
-          </li>*/}
         </ul>
 
         <div className="review__info-wrapper">
@@ -118,11 +113,13 @@ function Review({
           <p>{formValues.area}</p>
         </div>
 
-        <div className="form__button-wrapper">
-          <button className="form__button" onClick={onNext}>
-            Add to Pawsible
-          </button>
-        </div>
+        {buttonText && (
+          <div className="form__button-wrapper">
+            <button className="form__button" onClick={onNext}>
+              {buttonText}
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
