@@ -85,6 +85,12 @@
     color: #344b51;
   }
 
+  &__link {
+    display: flex;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
   &__link-icon {
     width: 0.73rem;
   }
@@ -112,6 +118,7 @@
     height: 190px;
     object-fit: cover;
     object-position: 50%;
+    cursor: pointer;
 
     &--right {
       border-radius: 8px;

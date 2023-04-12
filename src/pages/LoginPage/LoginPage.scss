@@ -13,7 +13,7 @@
   }
 
   &__form-label {
-    padding-left: 0.1rem;
+    padding-left: 0.2rem;
     color: $primary-color-dark;
   }
 
@@ -32,7 +32,7 @@
     width: 100%;
     min-width: 16rem;
     margin-bottom: 1rem;
-    border-radius: 13px;
+    border-radius: 8px;
     border: 1px solid $primary-color-base;
     padding: 0.75rem;
     font-family: "DM Sans";
@@ -53,7 +53,7 @@
     all: unset;
     width: 5rem;
     padding: 0.8rem 1rem;
-    border-radius: 13px;
+    border-radius: 8px;
     background-color: $primary-color-medium;
     text-align: center;
     cursor: pointer;

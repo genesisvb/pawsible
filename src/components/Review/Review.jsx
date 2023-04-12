@@ -48,7 +48,7 @@ function Review({
         </div>
 
         <div className="review__info-wrapper">
-          <h2>Notes:</h2>
+          <h2 className="review__info-title">Notes:</h2>
           <button className="review__info-link" onClick={onEditNotes}>
             edit
           </button>
@@ -57,7 +57,7 @@ function Review({
         <div className="review__info-textarea">{formValues.notes}</div>
 
         <div className="review__info-wrapper">
-          <h2>Daily Tasks:</h2>
+          <h2 className="review__info-title">Daily Tasks:</h2>
           <button className="review__info-link" onClick={onEditTasks}>
             edit
           </button>
@@ -71,7 +71,7 @@ function Review({
         </ul>
 
         <div className="review__info-wrapper">
-          <h2 className="review__title">Area</h2>
+          <h2 className="review__info-title">Area</h2>
           <button className="review__info-link" onClick={onEditArea}>
             edit
           </button>

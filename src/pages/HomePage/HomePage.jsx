@@ -85,20 +85,24 @@ function HomePage() {
         <div className="tasks">
           <h2 className="tasks__title">New</h2>
           <div className="tasks__link-wrapper">
-            <p className="tasks__link">Show all</p>
-            <img
-              className="tasks__link-icon"
-              src={arrowRight}
-              alt="arrow right icon"
-            />
+            <Link to="/pets" className="tasks__link">
+              Show all
+              <img
+                className="tasks__link-icon"
+                src={arrowRight}
+                alt="arrow right icon"
+              />
+            </Link>
           </div>
         </div>
         <div className="tasks__big-container">
           <div className="tasks__image-container">
             {pets.slice(0, 5).map((pet) => (
               <div key={pet.id} className="tasks__image-wrapper">
-                <img className="tasks__image" src={pet.photoUrl} alt="pet" />
-                <div className="tasks__notification">{pet.tasks.length}</div>
+                <Link to={`/pets/${pet.id}`}>
+                  <img className="tasks__image" src={pet.photoUrl} alt="pet" />
+                  <div className="tasks__notification">{pet.tasks.length}</div>
+                </Link>
               </div>
             ))}
           </div>

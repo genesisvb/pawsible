@@ -22,7 +22,7 @@ function LoginPage() {
           Username
         </label>
         <div className="login-page__input-wrapper">
-          <CgProfile className="login-page__icon" />
+          {/* <CgProfile className="login-page__icon" /> */}
           <input
             className="login-page__form-input"
             name="user"
@@ -32,7 +32,7 @@ function LoginPage() {
         </div>
 
         <label className="login-page__form-label" htmlFor="password">
-          <CiLock />
+          {/* <CiLock /> */}
           Password
           <input
             className="login-page__form-input"

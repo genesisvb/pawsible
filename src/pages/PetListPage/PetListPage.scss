@@ -1,1 +1,38 @@
 @use "../../styles/partials/variables" as *;
+
+.pet-list {
+  list-style-type: none;
+  padding: 2rem;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  &__image-wrapper {
+    height: 100px;
+    width: 100px;
+  }
+
+  &__image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__name {
+    margin-bottom: 0.5rem;
+  }
+
+  &__tasks {
+    padding-left: 1rem;
+  }
+}
