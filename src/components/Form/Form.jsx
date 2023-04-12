@@ -6,6 +6,7 @@ import photoUploadIcon from "../../assets/images/icons/upload.svg";
 
 function Form({ formValues, prevText, onPrev, onNext }) {
   const [photoPreviewUrl, setPhotoPreviewUrl] = useState(formValues.photo.url);
+  const [errors, setErrors] = useState({});
 
   const handlePhotoChange = (e) => {
     const photoFile = e.target.files[0];
@@ -27,14 +28,28 @@ function Form({ formValues, prevText, onPrev, onNext }) {
           ? { url: URL.createObjectURL(photoFile), file: photoFile }
           : formValues.photo,
       species: formData.get("species"),
-      name: formData.get("name"),
-      breed: formData.get("breed"),
+      name: formData.get("name").trim(),
+      breed: formData.get("breed").trim(),
       gender: formData.get("gender"),
       character: formData.getAll("character"),
       age: formData.get("age"),
     };
 
-    onNext(newValues);
+    const errors = {
+      photo: !newValues.photo.url,
+      species: !newValues.species,
+      name: !newValues.name,
+      breed: !newValues.breed,
+      gender: !newValues.gender,
+      character: newValues.character.length === 0,
+      age: !newValues.age,
+    };
+
+    if (Object.values(errors).some((value) => value)) {
+      setErrors(errors);
+    } else {
+      onNext(newValues);
+    }
   }
 
   return (
@@ -67,7 +82,12 @@ function Form({ formValues, prevText, onPrev, onNext }) {
               </div>
             )}
             {!photoPreviewUrl && (
-              <label className="form__photo-empty" htmlFor="photo">
+              <label
+                className={`form__photo-empty ${
+                  errors.photo ? "form__photo-empty--error" : ""
+                }`}
+                htmlFor="photo"
+              >
                 <img className="form__photo-empty-icon" src={photoUploadIcon} />
               </label>
             )}
@@ -81,7 +101,13 @@ function Form({ formValues, prevText, onPrev, onNext }) {
           </section>
           <section>
             <h2 className="form__heading">Step 2: Add profile information</h2>
-            <p className="form__subheading">Species:</p>
+            <p
+              className={`form__subheading ${
+                errors.species ? "pet-form__error-message" : ""
+              }`}
+            >
+              Species:
+            </p>
             <div className="form__wrapper">
               <div>
                 <input
@@ -126,7 +152,12 @@ function Form({ formValues, prevText, onPrev, onNext }) {
               </div>
             </div>
 
-            <label className="form__subheading" htmlFor="name">
+            <label
+              className={`form__subheading ${
+                errors.name ? "pet-form__error-message" : ""
+              }`}
+              htmlFor="name"
+            >
               Name:
             </label>
             <input
@@ -138,7 +169,12 @@ function Form({ formValues, prevText, onPrev, onNext }) {
               defaultValue={formValues.name}
             />
 
-            <label className="form__subheading" htmlFor="breed">
+            <label
+              className={`form__subheading ${
+                errors.breed ? "pet-form__error-message" : ""
+              }`}
+              htmlFor="breed"
+            >
               Breed:
             </label>
             <input
@@ -149,7 +185,13 @@ function Form({ formValues, prevText, onPrev, onNext }) {
               placeholder="Add a breed"
               defaultValue={formValues.breed}
             />
-            <label className="form__subheading" htmlFor="gender">
+
+            <label
+              className={`form__subheading ${
+                errors.gender ? "pet-form__error-message" : ""
+              }`}
+              htmlFor="gender"
+            >
               Gender:
             </label>
             <div className="form__wrapper">
@@ -197,7 +239,12 @@ function Form({ formValues, prevText, onPrev, onNext }) {
             </div>
 
             <div>
-              <label className="form__subheading" htmlFor="character">
+              <label
+                className={`form__subheading ${
+                  errors.character ? "pet-form__error-message" : ""
+                }`}
+                htmlFor="character"
+              >
                 Character:{" "}
                 <span className="form__comment">(choose all that apply)</span>
               </label>
@@ -274,7 +321,12 @@ function Form({ formValues, prevText, onPrev, onNext }) {
             </div>
 
             <div className="form__ages-input">
-              <label className="form__subheading" htmlFor="gender">
+              <label
+                className={`form__subheading ${
+                  errors.age ? "pet-form__error-message" : ""
+                }`}
+                htmlFor="gender"
+              >
                 Age:
               </label>
 
@@ -336,6 +388,7 @@ function Form({ formValues, prevText, onPrev, onNext }) {
                 </div>
               </div>
             </div>
+
             <div className="form__button-wrapper">
               <button className="form__button" type="submit">
                 Next

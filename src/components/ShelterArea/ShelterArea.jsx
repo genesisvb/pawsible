@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "../Header/Header";
 import "./ShelterArea.scss";
 import quarantineIcon from "../../assets/images/icons/quarantine-transparent.svg";
@@ -6,6 +7,8 @@ import autoimmuneIcon from "../../assets/images/icons/vet-check.svg";
 import kennelIcon from "../../assets/images/icons/kennel.svg";
 
 function ShelterArea({ formValues, prevText, onPrev, onNext }) {
+  const [errors, setErrors] = useState({});
+
   function onSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -13,14 +16,24 @@ function ShelterArea({ formValues, prevText, onPrev, onNext }) {
       area: formData.get("area"),
     };
 
-    onNext(newValues);
+    const errors = { area: !newValues.area };
+
+    if (Object.values(errors).some((value) => value)) {
+      setErrors(errors);
+    } else {
+      onNext(newValues);
+    }
   }
   return (
     <div>
       <form onSubmit={onSubmit}>
         <Header heading="Shelter Area" prevText={prevText} onPrev={onPrev} />
         <div>
-          <h2 className="shelter-area__title">
+          <h2
+            className={`shelter-area__title ${
+              errors.area ? "pet-form__error-message" : ""
+            }`}
+          >
             Choose the area within the shelter
           </h2>
         </div>

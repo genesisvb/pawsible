@@ -36,6 +36,10 @@
     display: block;
     background-color: #f0f6f6;
     padding: 2rem;
+
+    &--error {
+      border: 2px solid #c81b0c;
+    }
   }
 
   &__photo-empty-icon {

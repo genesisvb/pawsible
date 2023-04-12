@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Header from "../Header/Header";
 import "./Tasks.scss";
 
 function Tasks({ formValues, prevText, onPrev, onNext }) {
+  const [errors, setErrors] = useState({});
+
   function onSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -10,13 +13,25 @@ function Tasks({ formValues, prevText, onPrev, onNext }) {
       notes: formData.get("notes"),
     };
 
-    onNext(newValues);
+    const errors = { tasks: newValues.tasks.length === 0 };
+
+    if (Object.values(errors).some((value) => value)) {
+      setErrors(errors);
+    } else {
+      onNext(newValues);
+    }
   }
   return (
     <div>
       <form onSubmit={onSubmit}>
         <Header heading="Tasks and Notes" prevText={prevText} onPrev={onPrev} />
-        <h2 className="tasks__title-2">Add daily tasks</h2>
+        <h2
+          className={`tasks__title-2 ${
+            errors.tasks ? "pet-form__error-message" : ""
+          }`}
+        >
+          Add daily tasks
+        </h2>
         <ul className="tasks__list">
           <li className="tasks__list-item">
             <label className="tasks__label">
