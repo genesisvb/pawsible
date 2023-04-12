@@ -17,3 +17,7 @@ export function uploadPhoto(photoFile) {
 export function createPet(data) {
   return axios.post(`${apiUrl}/pets`, data);
 }
+
+export function getPets() {
+  return axios.get(`${apiUrl}/pets`);
+}
