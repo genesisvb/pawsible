@@ -19,25 +19,28 @@ function LoginPage() {
 
       <form className="login-page__form" onSubmit={onSubmit}>
         <label className="login-page__form-label" htmlFor="username">
-          <CgProfile />
           Username
         </label>
-        <input
-          className="login-page__form-input"
-          name="user"
-          type="text"
-          placeholder="Enter your username"
-        />
+        <div className="login-page__input-wrapper">
+          <CgProfile className="login-page__icon" />
+          <input
+            className="login-page__form-input"
+            name="user"
+            type="text"
+            placeholder="Enter your username"
+          />
+        </div>
+
         <label className="login-page__form-label" htmlFor="password">
           <CiLock />
           Password
+          <input
+            className="login-page__form-input"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+          />
         </label>
-        <input
-          className="login-page__form-input"
-          name="password"
-          type="password"
-          placeholder="Enter your password"
-        />
         <div className="login-page__button-wrapper">
           <button type="submit" className="login-page__button">
             Login

@@ -1,6 +1,49 @@
 @use "../../styles/partials/variables" as *;
 
 .form {
+  &__photo-section {
+    margin-bottom: 1rem;
+  }
+  &__photo-input {
+    display: none;
+  }
+
+  &__photo-preview-wrapper {
+    position: relative;
+  }
+
+  &__photo-preview {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__photo-edit-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+
+  &__photo-edit-icon {
+    width: 100%;
+    display: block;
+  }
+
+  &__photo-empty {
+    cursor: pointer;
+    display: block;
+    background-color: #f0f6f6;
+    padding: 2rem;
+  }
+
+  &__photo-empty-icon {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+
   &__heading {
     color: $secondary-color-dark;
     font-size: 1.5rem;

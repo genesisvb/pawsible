@@ -1,64 +1,101 @@
 import Header from "../Header/Header";
 import "./Tasks.scss";
-import { Link } from "react-router-dom";
 
-function Tasks() {
+function Tasks({ formValues, prevText, onPrev, onNext }) {
+  function onSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const newValues = {
+      tasks: formData.getAll("tasks"),
+      notes: formData.get("notes"),
+    };
+
+    onNext(newValues);
+  }
   return (
     <div>
-      <Header />
-      <h2 className="tasks__title-2">Add daily tasks</h2>
-      <ul className="tasks__list">
-        <li className="tasks__list-item">
-          <label className="tasks__label" htmlFor="grooming">
-            <input className="tasks__input" type="checkbox" />
-            Grooming
+      <form onSubmit={onSubmit}>
+        <Header heading="Tasks and Notes" prevText={prevText} onPrev={onPrev} />
+        <h2 className="tasks__title-2">Add daily tasks</h2>
+        <ul className="tasks__list">
+          <li className="tasks__list-item">
+            <label className="tasks__label">
+              <input
+                type="checkbox"
+                name="tasks"
+                value="Grooming"
+                className="tasks__input"
+                defaultChecked={formValues.tasks.includes("Grooming")}
+              />
+              Grooming
+            </label>
+          </li>
+          <li className="tasks__list-item">
+            <label className="tasks__label">
+              <input
+                type="checkbox"
+                name="tasks"
+                value="Cage desinfecting"
+                className="tasks__input"
+                defaultChecked={formValues.tasks.includes("Cage desinfecting")}
+              />
+              Cage desinfecting
+            </label>
+          </li>
+          <li className="tasks__list-item">
+            <label className="tasks__label">
+              <input
+                type="checkbox"
+                name="tasks"
+                value="Eye cleaning"
+                className="tasks__input"
+                defaultChecked={formValues.tasks.includes("Eye cleaning")}
+              />
+              Eye cleaning
+            </label>
+          </li>
+          <li className="tasks__list-item">
+            <label className="tasks__label">
+              <input
+                type="checkbox"
+                name="tasks"
+                value="Walk"
+                className="tasks__input"
+                defaultChecked={formValues.tasks.includes("Walk")}
+              />
+              Walk
+            </label>
+          </li>
+          {/* <li className="tasks__list-item">
+            <label className="tasks__label">
+              <input className="tasks__input" type="checkbox" name="task" />
+              <input
+                className="tasks__input--custom"
+                type="text"
+                placeholder="Custom..."
+                name="custom"
+              />
+            </label>
+          </li> */}
+        </ul>
+        <div className="tasks__notes">
+          <label className="tasks__heading" htmlFor="notes">
+            Notes
           </label>
-        </li>
-        <li className="tasks__list-item">
-          <label className="tasks__label" htmlFor="cageDesinfecting">
-            <input className="tasks__input" type="checkbox" />
-            Cage desinfecting
-          </label>
-        </li>
-        <li className="tasks__list-item">
-          <label className="tasks__label" htmlFor="eyeCleaning">
-            <input className="tasks__input" type="checkbox" />
-            Eye cleaning
-          </label>
-        </li>
-        <li className="tasks__list-item">
-          <label className="tasks__label" htmlFor="walk">
-            <input className="tasks__input" type="checkbox" />
-            Walk
-          </label>
-        </li>
-        <li className="tasks__list-item">
-          <label className="tasks__label" htmlFor="custom">
-            <input className="tasks__input" type="checkbox" />
-            <input
-              className="tasks__input--custom"
-              type="text"
-              placeholder="Custom..."
-            />
-          </label>
-        </li>
-      </ul>
-      <div className="tasks__notes">
-        <label className="tasks__heading" htmlFor="notes">
-          Notes
-        </label>
-        <textarea
-          className="tasks__textarea"
-          name="notes"
-          id="notes"
-          placeholder="What else should we know?"
-        ></textarea>
-      </div>
-      <div className="form__button-wrapper">
-        <Link to="/review" className="form__button">
-          Review
-        </Link>
-      </div>
+          <textarea
+            className="tasks__textarea"
+            name="notes"
+            id="notes"
+            placeholder="What else should we know?"
+            defaultValue={formValues.notes}
+          ></textarea>
+        </div>
+        <div className="form__button-wrapper">
+          <button className="form__button" type="submit">
+            Review
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import "./IntakePage.scss";
-import PhotoUpload from "../../components/PhotoUpload/PhotoUpload";
 import { useState } from "react";
 import Header from "../../components/Header/Header";
 import Form from "../../components/Form/Form";
@@ -31,7 +30,6 @@ function IntakePage() {
   return (
     <>
       <Header />
-      <PhotoUpload />
       <form
         acttion="/profile"
         method="post"

@@ -17,6 +17,14 @@
     color: $primary-color-dark;
   }
 
+  // &__icon {
+  //   display: block;
+  // }
+
+  &__input-wrapper {
+    display: flex;
+  }
+
   &__form-input {
     display: block;
     margin-bottom: 0.5rem;

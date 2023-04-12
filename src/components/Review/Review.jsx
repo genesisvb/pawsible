@@ -1,98 +1,127 @@
 import "./Review.scss";
 import Header from "../Header/Header";
-import femaleIcon from "../../assets/images/icons/female-icon.svg";
-import { Link } from "react-router-dom";
-import dogPic from "../../assets/images/border-collie.svg";
 import quarantineIcon from "../../assets/images/icons/quarantine.svg";
+import playRoomIcon from "../../assets/images/icons/pet-toy.svg";
+import autoimmnuneIcon from "../../assets/images/icons/vet-check.svg";
+import kennelIcon from "../../assets/images/icons/kennel.svg";
 
-function Review() {
+function Review({
+  formValues,
+  prevText,
+  onPrev,
+  onNext,
+  onEditBasicInfo,
+  onEditArea,
+  onEditTasks,
+  onEditNotes,
+}) {
   return (
     <>
-      <Header />
+      <Header heading="New Pet Review" prevText={prevText} onPrev={onPrev} />
       <div className="review">
         <div>
-          <img className="review__img" src={dogPic} alt="pet" />
+          <img className="review__img" src={formValues.photo.url} alt="pet" />
         </div>
 
         <div className="review__info-container">
           <div className="review__info">
             <div className="review__info-wrapper">
-              <h2>Nora</h2>
-              <img src={femaleIcon} alt="gender symbol" />
+              <h2>{formValues.name}</h2>
+              {/* <img src={femaleIcon} alt="gender symbol" /> */}
+              {formValues.gender}
             </div>
 
             <div className="review__info-wrapper">
-              <p className="review__info-text">Border Collie</p>
-              <p className="review__info-text">2-5 years old</p>
+              <p className="review__info-text">{formValues.breed}</p>
+              <p className="review__info-text">{formValues.age} years old</p>
             </div>
             <div className="review__info-character">
-              <p className="review__info-tag">friendly</p>
-              <p className="review__info-tag">playful</p>
-              <p className="review__info-tag">active</p>
+              {formValues.character.map((item) => (
+                <p key={item} className="review__info-tag">
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
         </div>
 
         <div className="review__info-wrapper">
-          <h2>Summary:</h2>
-          <Link className="review__info-link" to="/tasks">
+          <h2>Notes:</h2>
+          <button className="review__info-link" onClick={onEditNotes}>
             edit
-          </Link>
+          </button>
         </div>
 
-        <div>
-          <textarea className="review__info-textarea" type="text" />
-        </div>
+        <div className="review__info-textarea">{formValues.notes}</div>
 
         <div className="review__info-wrapper">
           <h2>Daily Tasks:</h2>
-          <Link className="review__info-link" to="/tasks">
+          <button className="review__info-link" onClick={onEditTasks}>
             edit
-          </Link>
+          </button>
         </div>
         <ul className="review__list">
-          <li className="review__list-item">
+          {formValues.tasks.map((task) => (
+            <li key={task} className="review__list-item">
+              {task}
+            </li>
+          ))}
+
+          {/* <li className="review__list-item">
             <label className="review__label" htmlFor="grooming">
               <input className="review__input" type="checkbox" />
               Grooming
             </label>
-          </li>
-          <li className="review__list-item">
-            <label className="review__label" htmlFor="cageDesinfecting">
-              <input className="review__input" type="checkbox" />
-              Cage desinfecting
-            </label>
-          </li>
-          <li className="review__list-item">
-            <label className="review__label" htmlFor="eyeCleaning">
-              <input className="review__input" type="checkbox" />
-              Eye cleaning
-            </label>
-          </li>
-          <li className="review__list-item">
-            <label className="review__label" htmlFor="walk">
-              <input className="review__input" type="checkbox" />
-              Walk
-            </label>
-          </li>
+          </li>*/}
         </ul>
 
         <div className="review__info-wrapper">
           <h2 className="review__title">Area</h2>
-          <Link className="review__info-link" to="/area">
+          <button className="review__info-link" onClick={onEditArea}>
             edit
-          </Link>
+          </button>
         </div>
 
         <div className="review__info-area">
-          <img className="review__info-icon" src={quarantineIcon} alt="icon" />
-          <p>Quarantine</p>
+          {formValues.area === "Quarantine" && (
+            <img
+              className="review__info-icon"
+              src={quarantineIcon}
+              alt="Quarantine area icon"
+            />
+          )}
+
+          {formValues.area === "Autoimmune" && (
+            <img
+              className="review__info-icon"
+              src={autoimmnuneIcon}
+              alt="Autoimmune area icon"
+            />
+          )}
+
+          {formValues.area === "Play Room" && (
+            <img
+              className="review__info-icon"
+              src={playRoomIcon}
+              alt="Play Room icon"
+            />
+          )}
+
+          {formValues.area === "Solo Kennel" && (
+            <img
+              className="review__info-icon"
+              src={kennelIcon}
+              alt="Kennel icon"
+            />
+          )}
+
+          <p>{formValues.area}</p>
         </div>
 
         <div className="form__button-wrapper">
-          <Link to="/" className="form__button">
+          <button className="form__button" onClick={onNext}>
             Add to Pawsible
-          </Link>
+          </button>
         </div>
       </div>
     </>
