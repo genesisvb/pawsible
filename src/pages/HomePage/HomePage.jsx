@@ -25,6 +25,8 @@ function HomePage() {
     return null;
   }
 
+  const randomPet = pets[Math.floor(Math.random() * pets.length)];
+
   return (
     <>
       <header className="header">
@@ -38,11 +40,8 @@ function HomePage() {
       </header>
       <section className="section">
         <div className="section__image-wrapper">
-          <img
-            className="section__image"
-            src={pets[Math.floor(Math.random() * pets.length)].photoUrl}
-            alt="pet"
-          />
+          <img className="section__image" src={randomPet.photoUrl} alt="pet" />
+          <p className="section__pet-name">{randomPet.name}</p>
         </div>
         <div>
           <h1 className="section__title">Select the category</h1>
@@ -83,7 +82,7 @@ function HomePage() {
           </div>
         </div>
         <div className="tasks">
-          <h2 className="tasks__title">New</h2>
+          <h2 className="tasks__title">Tasks</h2>
           <div className="tasks__link-wrapper">
             <Link to="/pets" className="tasks__link">
               Show all
@@ -101,6 +100,7 @@ function HomePage() {
               <div key={pet.id} className="tasks__image-wrapper">
                 <Link to={`/pets/${pet.id}`}>
                   <img className="tasks__image" src={pet.photoUrl} alt="pet" />
+                  <p className="tasks__pet-name">{pet.name}</p>
                   <div className="tasks__notification">{pet.tasks.length}</div>
                 </Link>
               </div>

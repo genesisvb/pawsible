@@ -40,7 +40,8 @@
     resize: none;
 
     &:focus {
-      border-color: $primary-color-base;
+      outline: none !important;
+      border: 2px solid $primary-color-base;
     }
   }
 
@@ -53,7 +54,7 @@
     all: unset;
     width: 5rem;
     padding: 0.8rem 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: $primary-color-medium;
     text-align: center;
     cursor: pointer;

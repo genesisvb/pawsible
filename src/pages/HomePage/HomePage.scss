@@ -26,6 +26,7 @@
   &__image-wrapper {
     margin-bottom: 1rem;
     width: 100%;
+    position: relative;
   }
 
   &__image {
@@ -35,6 +36,21 @@
     height: 210px;
     object-fit: cover;
     object-position: center;
+  }
+
+  &__pet-name {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 3.75rem;
+    background: rgba(235, 244, 245, 0.7);
+    border-radius: 0px 8px 8px 0px;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
   &__title {
@@ -123,6 +139,21 @@
     &--right {
       border-radius: 8px;
     }
+  }
+
+  &__pet-name {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 3rem;
+    background: rgba(235, 244, 245, 0.7);
+    border-radius: 0px 8px 8px 0px;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   &__notification {

@@ -19,10 +19,6 @@
 
   &__checkbox-input {
     display: none;
-
-    &:checked + span {
-      color: #fff;
-    }
   }
 
   &__tag-wrapper {
@@ -45,7 +41,6 @@
 
     &:has(.shelter-area__checkbox-input:hover, :checked) {
       background-color: $primary-color-base;
-      color: #fff;
     }
   }
 
@@ -55,9 +50,7 @@
     width: 9.8125rem;
     align-items: center;
     gap: 1rem;
-
-    &:hover {
-      color: #fff;
-    }
+    color: #000;
+    font-weight: 500;
   }
 }

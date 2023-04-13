@@ -4,6 +4,7 @@ import quarantineIcon from "../../assets/images/icons/quarantine.svg";
 import playRoomIcon from "../../assets/images/icons/pet-toy.svg";
 import autoimmnuneIcon from "../../assets/images/icons/vet-check.svg";
 import kennelIcon from "../../assets/images/icons/kennel.svg";
+import editIcon from "../../assets/images/icons/edit-pen.svg";
 
 function Review({
   formValues,
@@ -21,15 +22,17 @@ function Review({
     <>
       <Header heading={headingText} prevText={prevText} onPrev={onPrev} />
       <div className="review">
-        <div>
+        <div className="review__img-wrapper">
           <img className="review__img" src={formValues.photo.url} alt="pet" />
+          <button className="review__edit-button" onClick={onEditBasicInfo}>
+            <img className="review__edit-icon" src={editIcon} alt="edit icon" />
+          </button>
         </div>
 
         <div className="review__info-container">
           <div className="review__info">
             <div className="review__info-wrapper">
               <h2>{formValues.name}</h2>
-              {/* <img src={femaleIcon} alt="gender symbol" /> */}
               {formValues.gender}
             </div>
 
