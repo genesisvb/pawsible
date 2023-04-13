@@ -82,7 +82,7 @@ function HomePage() {
           </div>
         </div>
         <div className="tasks">
-          <h2 className="tasks__title">Tasks</h2>
+          <h2 className="tasks__title">Recently added</h2>
           <div className="tasks__link-wrapper">
             <Link to="/pets" className="tasks__link">
               Show all

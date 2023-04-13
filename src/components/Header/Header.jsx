@@ -21,7 +21,11 @@ function Header({ heading, prevText, onPrev }) {
         <p className="intake-header__title">{heading}</p>
       </div>
 
-      <button className="intake-header__button" onClick={() => navigate("/")}>
+      <button
+        className="intake-header__button"
+        type="button"
+        onClick={() => navigate("/")}
+      >
         <img
           className="intake-header__button-icon"
           src={closeIcon}

@@ -45,8 +45,6 @@ function Form({ formValues, prevText, onPrev, onNext }) {
       age: !newValues.age,
     };
 
-    console.log(errors);
-
     if (Object.values(errors).some((value) => value)) {
       setErrors(errors);
     } else {
