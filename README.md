@@ -1,6 +1,6 @@
 # Pawsible
 
-Pawsible is a mobile-based web application designed for animal shelter organizations to make the intake/registration process faster, efficient, and organized.
+Pawsible is a mobile-based web application designed for animal shelter organizations to make the intake/registration process faster, more efficient, and more organized.
 
 # Installation
 
